@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply rounded-full bg-orange-500 duration-500 active:scale-95 hover:bg-orange-600 active:bg-orange-600 p-2 px-4;
+  }
+}
