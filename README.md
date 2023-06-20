@@ -36,6 +36,7 @@ This repository contains a very basic to-do app with an ability to mark a todo a
 ## Links
 
 - [Live Preview](https://seesmof.github.io/react-todo-app/)
+- [App Design](https://tricks-to-do-list.webflow.io/)
 
 ## License
 
