@@ -4,6 +4,6 @@
 
 @layer components {
   .input-field {
-    @apply bg-inherit border-2 rounded-lg p-3;
+    @apply bg-inherit border-2 rounded-lg p-2 lg:p-3 w-full;
   }
 }
