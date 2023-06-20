@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .button {
-    @apply rounded-full bg-orange-500 duration-500 active:scale-95 hover:bg-orange-600 active:bg-orange-600 p-2 px-4;
+  .input-field {
+    @apply bg-inherit border-2 rounded-lg p-3;
   }
 }
