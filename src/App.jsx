@@ -6,12 +6,14 @@ function App() {
   const inputRef = useRef();
 
   const addTodo = () => {
-    const newTodo = inputRef.current.value;
-    if (newTodo) {
-      setTodos([...todos, { id: Date.now(), todo: newTodo }]);
-      inputRef.current.value = "";
-    }
-    return;
+    const text = inputRef.current.value;
+    const newTodo = {
+      text: text,
+      id: Date.now(),
+    };
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
+    inputRef.current.value = "";
+    inputRef.current.focus();
   };
 
   return (
@@ -20,7 +22,7 @@ function App() {
         <div className="flex container max-w-4xl h-full p-4 lg:p-6 mx-auto flex-col lg:flex-col-reverse justify-between w-full">
           <section className="flex flex-1 flex-col gap-2 w-full">
             {todos.map((todo) => (
-              <TodoCard key={todo.id} todo={todo} />
+              <TodoCard key={todo.id} text={todo.text} />
             ))}
           </section>
           <section className="flex flex-col w-full">
@@ -30,6 +32,7 @@ function App() {
                 type="text"
                 className="input-field"
                 placeholder="Enter your task..."
+                ref={inputRef}
               />
               <button
                 className="bg-stone-800 duration-300 hover:bg-stone-700 active:scale-95 active:bg-stone-700 px-6 rounded-lg font-medium text-white capitalize"
