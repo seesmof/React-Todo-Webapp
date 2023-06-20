@@ -10,6 +10,7 @@ function App() {
     const newTodo = {
       text: text,
       id: Date.now(),
+      isCompleted: false,
     };
     setTodos((prevTodos) => [...prevTodos, newTodo]);
     inputRef.current.value = "";
@@ -20,10 +21,20 @@ function App() {
     <>
       <div className="h-screen bg-stone-50 text-stone-900">
         <div className="flex container max-w-4xl h-full p-4 lg:p-6 mx-auto flex-col lg:flex-col-reverse justify-between w-full">
-          <section className="flex flex-1 flex-col gap-2 w-full">
-            {todos.map((todo) => (
-              <TodoCard key={todo.id} text={todo.text} />
-            ))}
+          <section className="flex flex-1 flex-col mb-4 w-full">
+            <h2 className="uppercase font-medium mb-2 lg:mb-3">your todo</h2>
+            <div className="flex flex-col gap-2">
+              {todos.map((todo) => (
+                <TodoCard
+                  key={todo.id}
+                  text={todo.text}
+                  id={todo.id}
+                  isCompleted={todo.isCompleted}
+                  todos={todos}
+                  setTodos={setTodos}
+                />
+              ))}
+            </div>
           </section>
           <section className="flex flex-col w-full">
             <h2 className="uppercase font-medium mb-1 lg:mb-2">add new todo</h2>
