@@ -19,11 +19,11 @@ function App() {
 
   return (
     <>
-      <div className="h-screen bg-stone-50 text-stone-900">
+      <div className="bg-stone-50 min-h-screen text-stone-900">
         <div className="flex container max-w-4xl h-full p-4 lg:p-6 mx-auto flex-col lg:flex-col-reverse justify-between w-full">
-          <section className="flex flex-1 flex-col mb-4 w-full">
+          <section className="flex flex-1 flex-col mb-4 lg:mt-4 w-full">
             <h2 className="uppercase font-medium mb-2 lg:mb-3">your todo</h2>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 overflow-scroll">
               {todos.map((todo) => (
                 <TodoCard
                   key={todo.id}
