@@ -6,10 +6,10 @@ function App() {
   return (
     <>
       <div className="flex flex-col-reverse lg:flex-col p-4 min-h-screen">
-        <div className="bg-slate-200">
+        <div className="">
           <Input />
         </div>
-        <div className="flex-1 bg-orange-200">
+        <div className="flex-1">
           <Todos />
         </div>
       </div>
