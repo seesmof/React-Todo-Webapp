@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import React, { useState } from "react";
 
 const Input = ({ todos, setTodos }) => {
@@ -11,28 +11,33 @@ const Input = ({ todos, setTodos }) => {
       task: taskHolder.current.value,
       completed: false,
     };
+    setTodos([...todos, newTodo]);
+    taskHolder.current.value = "";
+    console.log(todos);
   };
 
   return (
     <>
-      <div className="flex flex-row gap-4">
-        <input
-          type="text"
-          className="w-full p-2 border-2 border-gray-300 rounded-lg"
-          placeholder="Enter yout task..."
-          ref={taskHolder}
-        />
-        <button
-          className="whitespace-nowrap px-4 py-2 text-white bg-blue-500 rounded-lg"
-          onClick={() => {
-            setTodos([...todos, taskHolder.current.value]);
-            taskHolder.current.value = "";
-            console.log(todos);
-          }}
-        >
-          Add Task
-        </button>
-      </div>
+      <form
+        action=""
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleTodo();
+        }}
+      >
+        <div className="flex flex-row gap-4">
+          <input
+            type="text"
+            className="w-full p-2 border-2 border-gray-300 rounded-lg"
+            placeholder="Enter yout task..."
+            ref={taskHolder}
+            required
+          />
+          <button className="whitespace-nowrap px-4 py-2 text-white bg-blue-500 rounded-lg">
+            Add Task
+          </button>
+        </div>
+      </form>
     </>
   );
 };
