@@ -3,11 +3,10 @@ import React, { useState } from "react";
 
 const Input = ({ todos, setTodos }) => {
   const taskHolder = useRef();
-  const id = 0;
 
   const handleTodo = () => {
     const newTodo = {
-      id: id + 1,
+      id: Date.now(),
       task: taskHolder.current.value,
       completed: false,
     };
@@ -33,7 +32,7 @@ const Input = ({ todos, setTodos }) => {
             ref={taskHolder}
             required
           />
-          <button className="whitespace-nowrap px-4 py-2 text-white bg-blue-500 rounded-lg">
+          <button className="whitespace-nowrap px-4 py-2 text-white bg-blue-500 text-blue-50 rounded-lg font-medium">
             Add Task
           </button>
         </div>
