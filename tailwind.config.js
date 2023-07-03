@@ -6,8 +6,7 @@ export default {
     extend: {
       colors: {
         accent: "#e0f2fe",
-        accentHover: "#a6e4ff",
-        text: "#075985",
+        accentHover: "#a5f3fc",
       },
     },
   },
