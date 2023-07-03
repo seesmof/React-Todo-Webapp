@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 
 const Input = ({ todos, setTodos }) => {
   const taskHolder = useRef();
@@ -8,7 +7,6 @@ const Input = ({ todos, setTodos }) => {
     const newTodo = {
       id: Date.now(),
       task: taskHolder.current.value,
-      completed: false,
     };
     setTodos([...todos, newTodo]);
     taskHolder.current.value = "";
