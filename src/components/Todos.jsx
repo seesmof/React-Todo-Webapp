@@ -1,7 +1,11 @@
 import React from "react";
 
-const Todos = ({ todos }) => {
-  return <div>Todos</div>;
+const Todos = ({ todos, setTodos }) => {
+  return (
+    <>
+      <div className="fle"></div>
+    </>
+  );
 };
 
 export default Todos;
