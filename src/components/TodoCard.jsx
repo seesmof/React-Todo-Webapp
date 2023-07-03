@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 
-const TodoCard = ({ text, id, isCompleted, todos, setTodos }) => {
+const TodoCard = ({ text, id, todos, setTodos }) => {
+  const [isDone, setIsDone] = useState(isCompleted);
+
+  const isCompletedHandler = () => {
+    todos[id].isDone = !todos[id].isDone;
+  };
+
   return (
     <>
-      <div className="bg-stone-800 duration-300 cursor-pointer hover:bg-stone-700 active:bg-stone-700 group text-white w-full rounded-lg p-4 items-center flex flex-row justify-between">
-        <p className="group-hover:line-through">{text}</p>
-        <button className="text-xl duration-300 hover:text-red-500 active:scale-95">
+      <button
+        className="bg-accent hover:bg-accentHover active:bg-accentHover group text-text flex flex-row items-center justify-between w-full p-4 duration-300 rounded-lg cursor-pointer"
+        onClick={isCompletedHandler}
+      >
+        <p className={`${isDone ? "line-through" : ""}`}>{text}</p>
+        <button className="hover:text-red-500 active:scale-95 text-xl duration-300">
           <BsTrash />
         </button>
-      </div>
+      </button>
     </>
   );
 };

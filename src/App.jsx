@@ -10,7 +10,6 @@ function App() {
     const newTodo = {
       text: text,
       id: Date.now(),
-      isCompleted: false,
     };
     setTodos((prevTodos) => [...prevTodos, newTodo]);
     inputRef.current.value = "";
@@ -19,17 +18,16 @@ function App() {
 
   return (
     <>
-      <div className="bg-stone-50 min-h-screen text-stone-900">
-        <div className="flex container max-w-4xl h-full p-4 lg:p-6 mx-auto flex-col lg:flex-col-reverse justify-between w-full">
-          <section className="flex flex-1 flex-col mb-4 lg:mt-4 w-full">
-            <h2 className="uppercase font-medium mb-2 lg:mb-3">your todo</h2>
+      <div className="bg-stone-50 text-stone-900 min-h-screen">
+        <div className="lg:p-6 lg:flex-col-reverse container flex flex-col justify-between w-full h-full max-w-4xl p-4 mx-auto">
+          <section className="lg:mt-4 flex flex-col flex-1 w-full mb-4">
+            <h2 className="lg:mb-3 mb-2 font-medium uppercase">your todo</h2>
             <div className="flex flex-col gap-2 overflow-scroll">
               {todos.map((todo) => (
                 <TodoCard
                   key={todo.id}
                   text={todo.text}
                   id={todo.id}
-                  isCompleted={todo.isCompleted}
                   todos={todos}
                   setTodos={setTodos}
                 />
@@ -37,7 +35,7 @@ function App() {
             </div>
           </section>
           <section className="flex flex-col w-full">
-            <h2 className="uppercase font-medium mb-1 lg:mb-2">add new todo</h2>
+            <h2 className="lg:mb-2 mb-1 font-medium uppercase">add new todo</h2>
             <div className="flex flex-row gap-2">
               <input
                 type="text"
@@ -46,7 +44,7 @@ function App() {
                 ref={inputRef}
               />
               <button
-                className="bg-stone-800 duration-300 hover:bg-stone-700 active:scale-95 active:bg-stone-700 px-6 rounded-lg font-medium text-white capitalize"
+                className="bg-accent hover:bg-accentHover active:scale-95 active:bg-accentHover text-text px-6 font-medium capitalize duration-300 rounded-lg"
                 onClick={addTodo}
               >
                 add
