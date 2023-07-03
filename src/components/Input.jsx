@@ -33,7 +33,7 @@ const Input = ({ todos, setTodos }) => {
             ref={taskHolder}
             required
           />
-          <button className="whitespace-nowrap text-blue-50 px-4 py-2 font-medium text-white bg-blue-500 rounded-lg">
+          <button className="whitespace-nowrap text-blue-50 lg:hover:bg-blue-600 lg:active:scale-95 px-4 py-2 font-medium duration-300 bg-blue-500 rounded-lg">
             Add Task
           </button>
         </div>
