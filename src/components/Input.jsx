@@ -12,6 +12,7 @@ const Input = ({ todos, setTodos }) => {
     };
     setTodos([...todos, newTodo]);
     taskHolder.current.value = "";
+    taskHolder.current.focus();
     console.log(todos);
   };
 
@@ -32,7 +33,7 @@ const Input = ({ todos, setTodos }) => {
             ref={taskHolder}
             required
           />
-          <button className="whitespace-nowrap px-4 py-2 text-white bg-blue-500 text-blue-50 rounded-lg font-medium">
+          <button className="whitespace-nowrap text-blue-50 px-4 py-2 font-medium text-white bg-blue-500 rounded-lg">
             Add Task
           </button>
         </div>

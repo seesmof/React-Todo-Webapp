@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <main className="lg:flex-col flex flex-col-reverse gap-4 min-h-screen p-4">
+      <main className="lg:flex-col flex flex-col-reverse gap-4 min-h-screen max-w-5xl mx-auto p-4">
         <section className="">
           <Input todos={todos} setTodos={setTodos} />
         </section>
